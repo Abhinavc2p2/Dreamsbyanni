@@ -1,24 +1,22 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Products  from './Pages/Product';
+import Home from './Pages/Home';
+import About from './Pages/About';
+
 
 function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    axios.get('/api/users')
-      .then(response => {
-        setMessage(response.data.message);
-      })
-      .catch(error => {
-        console.error('There was an error!', error);
-      });
-  }, []);
-
   return (
-    <div>
-      <h1>{message}</h1>
-      <h1>hiii</h1>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/products" element={<Products/>} />
+        <Route path="/about" element={<About/>} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 

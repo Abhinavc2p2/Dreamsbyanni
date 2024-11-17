@@ -1,16 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const {registerController}=require('../controllers/userController')
 
-// Define routes
-router.get('/', (req, res) => {
-  console.log('GET /api/users requested');
-  res.json({ message: 'User route works!' });
+router.post('/register', (req, res) => {
+  try {
+    registerController(req, res);
+  } catch (error) {
+    console.error('Error during registration:', error);
+    res.status(500).json({ error: 'Registration failed' });
+  }
 });
 
-router.post('/add', (req, res) => {
-  // Handle POST request to add user
-  res.send('User added');
-});
 
-// Export the router
+
+
+
 module.exports = router;

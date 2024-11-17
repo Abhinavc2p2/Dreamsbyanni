@@ -1,0 +1,7 @@
+.navbar {
+    width: 100%; /* Ensures full width */
+    padding: 2rem; 
+    background-color: rgba(89, 91, 88, 0.381);
+    /* Adds padding for a broader appearance */
+  }
+  
