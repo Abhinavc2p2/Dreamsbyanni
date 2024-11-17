@@ -5,8 +5,7 @@ function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    // Call the backend API
-    axios.get('api/users')
+    axios.get('/api/users')
       .then(response => {
         setMessage(response.data.message);
       })
@@ -18,7 +17,7 @@ function App() {
   return (
     <div>
       <h1>{message}</h1>
-      <h1>do it</h1>
+      <h1>hiii</h1>
     </div>
   );
 }

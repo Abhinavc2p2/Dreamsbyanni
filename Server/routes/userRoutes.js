@@ -3,7 +3,8 @@ const router = express.Router();
 
 // Define routes
 router.get('/', (req, res) => {
-  res.send('User route works!');
+  console.log('GET /api/users requested');
+  res.json({ message: 'User route works!' });
 });
 
 router.post('/add', (req, res) => {
